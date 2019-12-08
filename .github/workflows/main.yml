@@ -1,13 +1,16 @@
-name: CI
+name: Linux
 
 on: [push]
 
 jobs:
   build:
 
-    runs-on: [ubuntu-latest, macOS-latest]
-
+    runs-on: ubuntu-latest
+    
     steps:
     - uses: actions/checkout@v1
     - name: Shell Check
-      run: shellcheck psx2chd.sh
+      run: |
+        apt update
+        apt install shellcheck
+        shellcheck psx2chd.sh || exit
