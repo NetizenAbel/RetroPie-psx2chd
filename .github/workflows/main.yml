@@ -1,16 +1,16 @@
-name: Linux
+name: macOS
 
 on: [push]
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     
     steps:
     - uses: actions/checkout@v1
     - name: Shell Check
       run: |
-        apt update
-        apt install shellcheck
+        brew update
+        brew install shellcheck
         shellcheck psx2chd.sh || exit
