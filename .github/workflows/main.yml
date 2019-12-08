@@ -3,7 +3,7 @@ name: macOS
 on: [push]
 
 jobs:
-  build:
+  lint:
 
     runs-on: macOS-latest
     
@@ -13,4 +13,4 @@ jobs:
       run: |
         brew update
         brew install shellcheck
-        shellcheck psx2chd.sh || exit
+        shellcheck psx2chd.sh
