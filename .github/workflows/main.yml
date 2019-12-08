@@ -5,9 +5,9 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest, macOS-latest]
 
     steps:
     - uses: actions/checkout@v1
     - name: Shell Check
-      uses: ludeeus/action-shellcheck@0.1.0
+      run: shellcheck psx2chd.sh
